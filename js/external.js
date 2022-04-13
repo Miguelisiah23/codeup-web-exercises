@@ -31,7 +31,7 @@ alert("Your total is " + total + " dollars.");
 
 let google = parseFloat(prompt("How much does google pay you hourly?"));
 
-let googleHours = parseFloat(prompt("How many hours did you  work?"));
+let googleHours = parseFloat(prompt("How many hours did you work?"));
 
 let amazon = parseFloat(prompt("How much does Amazon pay you hourly? "));
 
@@ -46,11 +46,11 @@ let paycheck = ((google * googleHours) + (amazon * amazonHours) + (facebook * fa
 alert("Your paycheck is " + paycheck + " dollars.");
 
 
-let enroll = confirm("Is the class full ?");
-alert(enroll);
+let enroll = confirm("Is the class full ? Press 'ok' for yes or 'cancel' for no.");
+console.log(enroll);
 
-let schedule = confirm("Does the schedule conflict with yours?");
-alert(schedule);
+let schedule = confirm("Does the schedule conflict with yours? Press 'ok' for yes or 'cancel' for no.");
+console.log(schedule);
 
 let student = enroll || schedule;
 if (student === false) {
@@ -60,14 +60,14 @@ if (student === false) {
 
 }
 
-let twoOrMore = confirm("Do you have more than two items?");
-alert(twoOrMore);
+let twoOrMore = confirm("Do you have more than two items? Press 'ok' for yes or 'cancel' for no.");
+console.log(twoOrMore);
 
-let expire = confirm("Is the offer still valid?");
-alert(expire);
+let expire = confirm("Is the offer still valid? Press 'ok' for yes or 'cancel' for no.");
+console.log(expire);
 
-let premium = confirm("Are you a premium member?");
-alert(premium);
+let premium = confirm("Are you a premium member? Press 'ok' for yes or 'cancel' for no.");
+console.log(premium);
 
 let offer = twoOrMore && expire || premium;
 if (offer === true) {
