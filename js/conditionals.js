@@ -47,7 +47,7 @@ let randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
- // console.log(analyzeColor(randomColor));
+// console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
@@ -166,19 +166,20 @@ if (askNum) {
         plus100(inputNum);
         isPositve(inputNum);
     }
-} else
-{
+} else {
     alert("You didnt want to play along...");
 }
 
 
-
 function isEven(num) {
-    if (num % 2 === 0) {
-        alert("The number " + num + " is even.");
-    } else {
-        alert("The number " + num + " is odd.");
-    }
+    // if (num % 2 === 0) {
+    //     alert("The number " + num + " is even.");
+    // } else {
+    //     alert("The number " + num + " is odd.");
+    // }
+
+    // Ternary style  if/else statements
+    (num % 2 === 0) ? alert("The number " + num + " is even.") : alert("The number " + num + " is odd.");
 }
 
 function plus100(num) {
@@ -188,11 +189,14 @@ function plus100(num) {
 }
 
 function isPositve(num) {
-    if (num > 0) {
-        alert("The number " + num + " is positive.");
-    } else if (num < 0) {
-        alert("The number " + num + " is negative.");
-    }
+    // if (num >= 0) {
+    //     alert("The number " + num + " is positive.");
+    // } else if (num < 0) {
+    //     alert("The number " + num + " is negative.");
+    // }
+
+    // Ternary style  if/else statements
+    (num >= 0) ? alert("The number " + num + " is positive.") : alert("The number " + num + " is negative.");
 }
 
 
