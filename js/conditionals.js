@@ -164,7 +164,7 @@ if (askNum) {
     } else {
         isEven(inputNum);
         plus100(inputNum);
-        isPositve(inputNum);
+        isPositive(inputNum);
     }
 } else {
     alert("You didnt want to play along...");
@@ -188,7 +188,7 @@ function plus100(num) {
     }
 }
 
-function isPositve(num) {
+function isPositive(num) {
     // if (num >= 0) {
     //     alert("The number " + num + " is positive.");
     // } else if (num < 0) {
