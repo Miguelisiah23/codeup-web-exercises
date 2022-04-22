@@ -21,11 +21,21 @@ for (let int = 1; int < 11; int++) {
     console.log(randomNum + " Is odd.")
 }
 
-// example 3
+// example 3 two ways to do this depeing if using numbers or string
 
+// numbers*
 for (let x = 1; x <= 9; x++) {
     console.log((x.toString().repeat(x)))
 }
+// strings*
+// for (let x = 0; x < 10; x++) {
+//     let txt = x
+//     for (let y = 0; y < x; y++) {
+//         txt = txt.toString() + y
+//         console.log(x);
+//     }
+// }
+
 
 for (let x = 100; x >= 5; x -= 5) {
     console.log(x)
