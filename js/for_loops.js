@@ -29,10 +29,10 @@ for (let x = 1; x <= 9; x++) {
 }
 // strings*
 // for (let x = 0; x < 10; x++) {
-//     let txt = x
-//     for (let y = 0; y < x; y++) {
-//         txt = txt.toString() + y
-//         console.log(x);
+//     let str = "";
+//     for (let y = 0; y <= x; y++) {
+//         str = str + y;
+//         console.log(str);
 //     }
 // }
 

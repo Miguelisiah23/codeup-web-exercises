@@ -19,10 +19,8 @@ oddOnly();
 
 function oddNum() {
     let num = +askNum;
-    for (let x = 1; x <= 50; x++) {
-        if (x % 2 === 0) {
-            continue;
-        } else if (num === x) {
+    for (let x = 1; x <= 50; x += 2) {
+      if (num === x) {
             console.log("YIKES " + num + " is bad luck im going to skip!");
             continue;
         }
