@@ -11,19 +11,23 @@ function oddOnly() {
         }
     }
 }
+
 oddOnly();
 
- function oddNum() {
-     let num = + askNum;
-     for (let x = 1; x <= 50; x++) {
-         if (x % 2 === 0) {
-             continue;
-         } else if (num === x) {
-             console.log("YIKES " + num + " is bad luck im going to skip!");
-             continue;
-         }
-         console.log(x);
+// added the product of function oddOnly into the function of oddNum
+// will print every odd number ans say skip to the passed in odd number
 
-     }
- }
- oddNum();
+function oddNum() {
+    let num = +askNum;
+    for (let x = 1; x <= 50; x++) {
+        if (x % 2 === 0) {
+            continue;
+        } else if (num === x) {
+            console.log("YIKES " + num + " is bad luck im going to skip!");
+            continue;
+        }
+        console.log(x);
+    }
+}
+
+oddNum();
