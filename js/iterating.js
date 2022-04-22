@@ -62,22 +62,22 @@
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
-let numbers = [1,2,3,4,5]
+let arrNum= [1,2,3,4,5]
 
-function first () {
-    return numbers[0] + " is the first element in this array";
+function first (arrNum) {
+    return arrNum[0] + " is the first element in this array";
 }
 
-function second () {
-    return numbers[1] + " is the second element in this array";
+function second (arrNum) {
+    return arrNum[1] + " is the second element in this array";
 }
 
-function last () {
-    return numbers.length + " is the last element in this array";
+function last (arrNum) {
+    return arrNum[arrNum.length - 1] + " is the last element in this array";
 }
 
-console.log(first());
-console.log(second());
-console.log(last());
+console.log(first(arrNum));
+console.log(second(arrNum));
+console.log(last(arrNum));
 
 })();
