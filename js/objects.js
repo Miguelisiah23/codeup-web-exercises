@@ -159,22 +159,24 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-    function createBook(title, first, last) {
+    function createBook(title, author) {
+        let authorArr = author.split(" ");
+
         return {
             title: title, author: {
-                firstName: first, lastName: last
+                firstName: authorArr[0], lastName: authorArr[1]
             }
         };
     }
 
-    console.log(createBook("The Hairy Leg", "Bushy", "Femur"));
+    console.log(createBook("The Hairy Leg", "Bushy Femur"));
 
     let books2 = [
-        createBook("Too Many Chickens", "Cooper", "Henfield"),
-        createBook("Big Rocks", "Boulder", "Shoulders"),
-        createBook("Clear Views", "Serenity", "Seegood"),
-        createBook("The Best Day Ever", "Happy", "Dayz"),
-        createBook("Who Did It", "Tooloud", "Owls")
+        createBook("Too Many Chickens", "Cooper Henfield"),
+        createBook("Big Rocks", "Boulder Shoulders"),
+        createBook("Clear Views", "Serenity Seegood"),
+        createBook("The Best Day Ever", "Happy Dayz"),
+        createBook("Who Did It", "Tooloud Owls")
     ];
     console.log(books2[3].title);
 
@@ -186,6 +188,4 @@
     }
 
     books2.forEach(showBookInfo);
-
-
 })();
