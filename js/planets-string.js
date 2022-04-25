@@ -1,4 +1,4 @@
-(function(){
+(function () {
     "use strict";
 
     let planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
@@ -10,7 +10,7 @@
      * planetsArray.
      * console.log planetsArray to check your work
      */
-   planetsArray = planetsString.split("|");
+    planetsArray = planetsString.split("|");
     console.log(planetsArray);
 
     /**
@@ -19,13 +19,16 @@
      * results. Why might this be useful?
      *
      * BONUS:
-     * Create another string that would display your planets in an undordered
+     * Create another string that would display your planets in an unordered
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
-    let planetsString2 = "Mercury<br>Venus<br>Earth<br>Mars<br>Jupiter<br>Saturn<br>Uranus<br>Neptune";
-    console.log(planetsString2);
+    let planetsWBreaks = planetsArray.join("<br>");
+    console.log(planetsWBreaks);
 
- let planetsHtml =  "<ul><li>Mercury</li><li>Venus</li><li>Earth</li><li>Mars</li><li>Jupiter</li><li>Saturn</li><li>Uranus</li><li>Neptune</li></ul>"
+    document.body.innerHTML += planetsWBreaks;
 
+    let planetsList = "<ul><li>" + planetsArray.join("</li><li>") + "</li></ul>";
+
+    document.body.innerHTML += planetsList;
 })();
