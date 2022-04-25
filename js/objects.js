@@ -185,7 +185,7 @@
         console.log("----");
     }
 
-    books.forEach(showBookInfo);
+    books2.forEach(showBookInfo);
 
 
 })();
