@@ -11,3 +11,10 @@ function arrStr(arr) {
 
 const testArr = ['apple','blue','orange'];
 console.log(arrStr(testArr));
+
+function alphOrder(str) {
+  str = str.split("").sort().join("");
+  return str;
+}
+
+console.log(alphOrder("miguel"));
