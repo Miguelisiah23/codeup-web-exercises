@@ -6,13 +6,13 @@ body, html {
     font-family: Arial, Ubuntu, sans-serif;
 }
 :root {
-   --main-bg-info: lightblue;
+   --main-bg-info: #CCDEFF;
    --main-text-info: #4A45A1;
-   --main-bg-success: lightgreen;
+   --main-bg-success: #CFF3DA;
    --main-text-success: #338152;
-   --main-bg-warning: lightyellow;
+   --main-bg-warning: #FCFBC9;
    --main-text-warning: #B0A14D;
-   --main-bg-error: lightpink;
+   --main-bg-error: #FAD2D6;
    --main-text-error: #983A4F;
 }
 .message {
