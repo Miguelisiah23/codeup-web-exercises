@@ -18,3 +18,14 @@ function alphOrder(str) {
 }
 
 console.log(alphOrder("miguel"));
+
+
+function sumOfElements(arr) {
+   let bucket = 0;
+   for (let num of arr) {
+       bucket += num;
+   }
+    return bucket;
+}
+
+console.log(sumOfElements([1, 2, 3, 4, 5]));
