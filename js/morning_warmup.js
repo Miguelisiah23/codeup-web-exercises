@@ -29,3 +29,18 @@ function sumOfElements(arr) {
 }
 
 console.log(sumOfElements([1, 2, 3, 4, 5]));
+let product1 = {
+    name: 'Hammar',
+    priceInCents: 400,
+    description: 'It is a a hammar.',
+    inventory: 25034
+}
+
+function returnProductEssentialDetails(product) {
+    return {
+        name: product.name,
+        priceInCents: product.priceInCents
+    }
+}
+
+console.log(returnProductEssentialDetails(product1));
