@@ -22,16 +22,13 @@ ul {
     margin: 0;
     align-items: center;
 }
-
-img {
-    width: 1em;
-    height: 1em;
-}
 a:hover {
     color: blue;
 }
 .logo {
-    font-size: 3em;
+    font-size: 2em;
     margin: 0 auto;
     padding: .2em 0;
+    position: relative;
+    right: 100px;
 }
