@@ -1,0 +1,14 @@
+.blue-title h2{
+    color: blue;
+    margin: .5em;
+}
+.large {
+    font-size: 3em;
+}
+p {
+    margin: 0;
+}
+.spaced-out p{
+    margin: 1em;
+}
+
