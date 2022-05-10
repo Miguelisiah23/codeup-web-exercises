@@ -93,3 +93,17 @@ function returnHighestObject (arr) {
 }
 
 console.log(returnHighestObject(hamsters));
+
+
+function mostColorful (arr) {
+    let colorful = {fur: []};
+    for (let color of arr) {
+        if (color.fur.length > colorful.fur.length) {
+            colorful = color;
+        }
+    }
+    return colorful;
+
+}
+
+console.log(mostColorful(hamsters));
