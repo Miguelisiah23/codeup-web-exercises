@@ -107,3 +107,19 @@ function mostColorful (arr) {
 }
 
 console.log(mostColorful(hamsters));
+
+function returnObject (str) {
+    const obj = {};
+    obj.str = str;
+    obj.size = str.length;
+    obj.isOneWord = str.indexOf(" ") < 0;
+    let lc = str.toLowerCase();
+    if (lc.includes("r") || lc.includes("s") || lc.includes("t") || lc.includes("l") ||  lc.includes("n") || lc.includes("e")) {
+        obj.containsLetterFromRSTLINE = true;
+    } else {
+         obj.containsLetterFromRSTLINE = false;
+    }
+        return obj;
+}
+console.log(returnObject("tococat"));
+
