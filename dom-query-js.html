@@ -25,6 +25,11 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+<button id="btn-1">Change Header</button>
+<button id="btn-2">Change Sub-header</button>
+<button id="btn-3">Change List </button>
+<button id="btn-4">Change Paragraphs</button>
+
 <script>
     (function() {
         "use strict";
@@ -32,33 +37,63 @@
         let mainHeader = document.getElementById("main-header");
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "Javascript is cool";
+        // mainHeader.innerHTML = "Javascript is cool";
         // TODO: Uncomment the next line and get the sub header element by id
-        let subHeader = document.getElementById("sub-header");
+        // let subHeader = document.getElementById("sub-header");
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = "blue";
+        // subHeader.style.color = "blue";
         // TODO: Uncomment the next line and get all list items
         let listItems = document.getElementsByTagName("li");
 
         // TODO: Set text color on every other list item to grey
-        let even = 0;
-       for (let item of listItems) {
-           even++;
-           if (even % 2 === 0) {
-               item.style.color = "grey";
-           }
-
-
-       }
+       //  let even = 0;
+       // for (let item of listItems) {
+       //     even++;
+       //     if (even % 2 === 0) {
+       //         item.style.color = "grey";
+       //     }
+       // }
         // TODO: Set text color of li with dbid = 1 to blue
-       listItems[0].style.color = "blue";
+       // listItems[0].style.color = "blue";
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        let subParagraphs = document.getElementsByClassName("sub-paragraph") ;
+        // let subParagraphs = document.getElementsByClassName("sub-paragraph") ;
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerHTML = "Mission Accomplished!";
+        // subParagraphs[0].innerHTML = "Mission Accomplished!";
+
+
+    //    Dom exercise part 2.
+        let changeJava = function(){
+            document.getElementById("main-header").innerHTML = "Javascript is cool";
+        }
+
+        document.getElementById("btn-1").addEventListener("click", changeJava);
+
+        let changeSubHeader = function() {
+            document.getElementById("sub-header").style.color = "blue";
+        }
+
+        document.getElementById("btn-2").addEventListener("click", changeSubHeader);
+
+        let liColors = function (){
+            let even = 0;
+            listItems[0].style.color = "blue";
+            for (let item of listItems) {
+                even++;
+                if (even % 2 === 0) {
+                    item.style.color = "grey";
+                }
+            }
+        }
+        document.getElementById("btn-3").addEventListener("click", liColors);
+
+        let changeParagraph = function (){
+            document.getElementsByClassName("sub-paragraph")[0].innerText = "Mission Accomplished!";
+        }
+
+        document.getElementById("btn-4").addEventListener("click", changeParagraph);
     })();
 </script>
 </body>
