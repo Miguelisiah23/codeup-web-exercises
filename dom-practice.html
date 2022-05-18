@@ -66,9 +66,21 @@
 <script>
 
     // TODO: Prompt the user to enter a color. Select the first div with the class of "question", and change the font color to the users input.
-let answer = prompt("Pick a color.");
-let  setColor = document.getElementsByClassName("question")[0];
+
+    //Question #0
+    let answer = prompt("Pick a color.");
+    let  setColor = document.getElementsByClassName("question")[0];
    setColor.style.color = answer;
+    //Question #1
+    let bgColor = document.getElementById("color");
+    let button = document.getElementById("changeColor");
+    let colorChange =  function (){
+        document.body.style.backgroundColor = bgColor.value;
+    }
+
+    button.addEventListener("click", colorChange);
+
+
 </script>
 </body>
 </html>
