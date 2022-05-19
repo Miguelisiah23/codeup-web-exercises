@@ -79,6 +79,17 @@
     }
 
     button.addEventListener("click", colorChange);
+//    Question #2
+    let listValue = document.getElementById("todo");
+    let todoList = document.getElementById("todosList");
+    let todoBtn = document.getElementById("addTodo");
+     todoBtn.addEventListener("click",function (){
+        if (listValue.value !== "") {
+            let str = "<li>" + listValue.value + "</li>";
+            todoList.innerHTML += str;
+            listValue.value= "";
+        }
+    })
 
 
 </script>
