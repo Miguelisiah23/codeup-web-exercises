@@ -5,11 +5,40 @@
     <title>JQuery</title>
 </head>
 <body>
+<div class="div1" id="div1">
+    <h1 class="codeup" id="first-h1">I AM WHATEVER I SAY I AM</h1>
+    <p class="codeup" id="first-p">IF I WASNT</p>
+
+    <ul class="codeup" id="ul1">
+        <LI>WHY WOULD I SAY I AM</LI>
+
+    </ul>
+</div>
+
+
+
+
+
+
 
 <script src="js/jquery-3.6.0.js"></script>
 <script>
     $(function (){
-        alert("You came to the right place");
+        // alert("You came to the right place");
+
+       // let contents = $("#div1").html();
+       // alert(contents);
+
+       //  $(".codeup").css("border", "1px solid red")
+
+        // $("li").css("font-size", "20px")
+
+        let head =  $("h1");
+        let par = $("p");
+        alert(head.html());
+
+        let allElemnts = $("li,h1,p");
+
     })
 </script>
 </body>
