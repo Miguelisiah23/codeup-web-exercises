@@ -63,33 +63,55 @@
     <button id="submitString">Add</button>
     <p id="madLib">Hello</p>
 </div>
+<script src="js/jquery-3.6.0.js"></script>
 <script>
 
     // TODO: Prompt the user to enter a color. Select the first div with the class of "question", and change the font color to the users input.
 
     //Question #0
-    let answer = prompt("Pick a color.");
-    let  setColor = document.getElementsByClassName("question")[0];
-   setColor.style.color = answer;
-    //Question #1
-    let bgColor = document.getElementById("color");
-    let button = document.getElementById("changeColor");
-    let colorChange =  function (){
-        document.body.style.backgroundColor = bgColor.value;
+    // let answer = prompt("Pick a color.");
+    // let setColor = document.getElementsByClassName("question")[0];
+    // setColor.style.color = answer;
+    // //Question #1
+    // let bgColor = document.getElementById("color");
+    // let button = document.getElementById("changeColor");
+    // let colorChange = function () {
+    //     document.body.style.backgroundColor = bgColor.value;
+    // }
+    //
+    // button.addEventListener("click", colorChange);
+    // //    Question #2
+    // let listValue = document.getElementById("todo");
+    // let todoList = document.getElementById("todosList");
+    // let todoBtn = document.getElementById("addTodo");
+    // todoBtn.addEventListener("click", function () {
+    //     if (listValue.value !== "") {
+    //         let str = "<li>" + listValue.value + "</li>";
+    //         todoList.innerHTML += str;
+    //         listValue.value = "";
+    //     }
+    // })
+    // Question #3
+    function toggleFontSize(){
+        let h1s = $("h1");
+        h1s.each(function (){
+            if($(this).css("font-size") !== "10px") {
+                $(this).css("font-size","10px");
+            } else {
+                $(this).css("font-size", "20px");
+            }
+        });
     }
+    let intervalId = setInterval(toggleFontSize, 1000);
 
-    button.addEventListener("click", colorChange);
-//    Question #2
-    let listValue = document.getElementById("todo");
-    let todoList = document.getElementById("todosList");
-    let todoBtn = document.getElementById("addTodo");
-     todoBtn.addEventListener("click",function (){
-        if (listValue.value !== "") {
-            let str = "<li>" + listValue.value + "</li>";
-            todoList.innerHTML += str;
-            listValue.value= "";
-        }
-    })
+        setInterval(function (){
+            $("h1").css("font-size","10px");
+            if ($(this).css("font-size","10px")){
+                $(this).css("font-size","20px");
+
+            }
+        }, 1000);
+
 
 
 </script>
