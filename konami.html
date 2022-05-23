@@ -11,72 +11,185 @@
 </head>
 <body>
 <div class="main-box">
-    <div class="head main-h1">
-<h1 class="main-h1" id="heading">ENTER CHEAT CODE</h1>
-        <div class="head main-h1">
-        <i class="fa-solid hidden fa-arrow-up"> </i>
-        <i class="fa-solid hidden fa-arrow-up"> </i>
-        <i class="fa-solid hidden fa-arrow-down"> </i>
-        <i class="fa-solid hidden fa-arrow-down"> </i>
-        <i class="fa-solid hidden fa-arrow-left"> </i>
-        <i class="fa-solid hidden fa-arrow-left"> </i>
-        <i class="fa-solid hidden fa-arrow-right"> </i>
-        <i class="fa-solid hidden fa-arrow-right"> </i>
-        <p class="hidden ">A </p>
-        <p class="hidden ">B </p>
-        <p class="hidden ">"ENTER"</p>
+    <h1 class="main-h1" id="heading">ENTER CHEAT CODE</h1>
+    <h1 class="main-h1" id="h1-2">ENTER CHEAT CODE</h1>
+    <h1 class="main-h1" id="h1-3">ENTER CHEAT CODE</h1>
+    <h1 class="main-h1" id="h1-4">KEYBLADE</h1>
+    <h1 class="dark-mode main-h1">DARK MODE</h1>
+    <div class="light-dark">
+        <div id="dark"><img id="dark-img" src="img/darkcrazy.gif"></div>
+        <div id="light"><img id="light-img" src="img/lightcrazy.webp"></div>
     </div>
-<h1 class="main-h1 h1-2" >ENTER CHEAT CODE</h1>
-<h1 class="main-h1 h1-2" >ENTER CHEAT CODE</h1>
-<h1 class="main-h1 h1-2" >ENTER CHEAT CODE</h1>
-<h1 class="main-h1 h1-2" >ENTER CHEAT CODE</h1>
-<div class="gif" id="gif"></div>
-</div>
+    <div class="gif" id="gif"></div>
+    <div class="head main-h1">
+        <ul class="main-h1" id="ul-1">
 
+            <li><i class="fa-solid fa-arrow-up"> </i></li>
+            <li><i class="fa-solid fa-arrow-up"> </i></li>
+            <li><i class="fa-solid fa-arrow-down"> </i></li>
+            <li><i class="fa-solid fa-arrow-down"> </i></li>
+            <li><i class="fa-solid fa-arrow-left"> </i></li>
+            <li><i class="fa-solid fa-arrow-left"> </i></li>
+            <li><i class="fa-solid fa-arrow-right"> </i></li>
+            <li><i class="fa-solid fa-arrow-right"> </i></li>
+            <li><p class=" ">B </p></li>
+            <li><p class=" ">A </p></li>
+            <li><p class=" ">"ENTER"</p></li>
+        </ul>
+        <ul class="main-h1" id="ul-2">
+
+            <li><i class="fa-solid fa-arrow-up"> </i></li>
+            <li><i class="fa-solid fa-arrow-down"> </i></li>
+            <li><i class="fa-solid fa-arrow-up"> </i></li>
+            <li><i class="fa-solid fa-arrow-down"> </i></li>
+            <li><i class="fa-solid fa-arrow-left"> </i></li>
+            <li><i class="fa-solid fa-arrow-right"> </i></li>
+            <li><i class="fa-solid fa-arrow-left"> </i></li>
+            <li><i class="fa-solid fa-arrow-right"> </i></li>
+            <li><p class=" ">A</p></li>
+            <li><p class=" ">B </p></li>
+            <li><p class=" ">A</p></li>
+        </ul>
+
+
+    </div>
+</div>
 <script src="js/jquery-3.6.0.js"></script>
 <script>
     $(function () {
         "use strict";
 
+        $("#light").css("display", "none");
+        $("#gif").css("display", "none");
 
-        const code = [];
+
+        const code1 = [];
+        const code2 = [];
+        const code3 = [];
+        const code4 = [];
         const cheatCode1 = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
-        const cheatCode2 = [];
-        const cheatCode3 = [];
-        const cheatCode4 = [];
+        const cheatCode2 = [38, 40, 38, 40, 37, 39, 37, 39, 65, 66, 65];
+        const cheatCode3 = [75, 69, 89, 66, 76, 65, 68, 69];
+        const enterKey = [13, 13];
+
         $(document).keyup(function (event) {
             let key = event.keyCode;
+            console.log(key);
             if (cheatCode1.includes(key)) {
-                code.push(key);
-                console.log(code);
+                code1.push(key);
+                console.log(code1);
+                galaga();
+            }
+            if (cheatCode2.includes(key)) {
+                code2.push(key);
                 streetFighter();
+            }
+            if (cheatCode3.includes(key)) {
+                code3.push(key);
+                console.log(code3);
+                kingdomHearts();
+            }
+            if (enterKey.includes(key)) {
+                code4.push(key);
+                clearAll()
             }
         });
 
-        function streetFighter(arr1,arr2){
-            let audio = new Audio('mp3/streetfighter5.mov')
-            if (code.toString() === cheatCode1.toString()){
-                $("body").css("background", "black");
-                $(".h1-2").css("display", "none");
-                audio.play();
-                $("#gif").css("background-image","url('img/streetfighter4.gif')");
-                stopStreetFighter();
+        // Konami Code Output Functions
+        function clearAll() {
+            if (code4.toString() === enterKey.toString()) {
+                window.location = "http://localhost:63342/codeup-web-exercises/konami.html?_ijt=13j5bv0aur4mbm9r3baombkb5k&_ij_reload=RELOAD_ON_SAVE";
             }
         }
-        function stopStreetFighter() {
-            let stopId = setTimeout(function () {
+
+        function galaga() {
+            let audio = new Audio('mp3/galaga.mp3')
+            if (code1.toString() === cheatCode1.toString()) {
+                $("body").css("background", "black");
+                audio.play();
+                $("#gif").css({"background-image": "url('img/galaga.gif", "height": "700px", "display": "block"})
+                $("#h1-2").css("display", "none");
+                $("#heading").css("display", "none");
+                $(".light-dark").css("display", "none");
+                $(".dark-mode").css("display", "none");
+                stopAll(15000);
+            }
+        }
+
+        function streetFighter() {
+            let audio = new Audio('mp3/streetfighter5.mov')
+            if (code2.toString() === cheatCode2.toString()) {
+                $("body").css("background", "black");
+                audio.play();
+                $("#gif").css({"background-image": "url('img/dancombo.gif')", "width": "600px", "display": "block"});
+                $("#h1-2").css("display", "none");
+                $("#heading").css("display", "none");
+                $(".light-dark").css("display", "none");
+                $(".dark-mode").css("display", "none");
+
+                stopAll(15000);
+            }
+        }
+
+        function kingdomHearts() {
+            let audio = new Audio('mp3/kingdomhearts.mp3')
+            if (code3.toString() === cheatCode3.toString()) {
+                audio.play();
+                $("body").css({
+                    "background-image": "url('img/kingdomhearts.webp')",
+                    "background-size": "cover",
+                    "display": "block"
+                });
+                $(".main-box").css("display", "none")
+                stopAll(40000);
+            }
+        }
+
+        // Function to stop Konami code output
+        function stopAll(num) {
+            setTimeout(function () {
                 window.location = "http://localhost:63342/codeup-web-exercises/konami.html?_ijt=13j5bv0aur4mbm9r3baombkb5k&_ij_reload=RELOAD_ON_SAVE";
-            }, 15000);
+            }, num);
         }
-        $("#heading").hover(hover,noHover)
 
-        function hover(){
-            $(".hidden").css("display", "block");
+        // CODE TO REVEAL CHEATCODE ON HOVER
+
+        $("#heading").hover(hover1, noHover);
+        $("#h1-2").hover(hover2, noHover);
+        $("#h1-3").hover(hover3, noHover);
+        $("#dark").click(darkMode);
+        $("#light").click(lightMode);
+
+
+        function hover1() {
+            $(this).html($("#ul-1").html());
 
         }
-        function noHover(){
-            $(".hidden").css("display","none");
-            $(this).css("display","block");
+
+        function hover2() {
+            $(this).html($("#ul-2").html());
+        }
+
+        function hover3() {
+            $(this).html($("#h1-4").html());
+        }
+
+        function noHover() {
+            $(this).html("ENTER CHEAT CODE");
+        }
+
+        function darkMode() {
+            $("body").css("background", "black");
+            $(".dark-mode").html("LIGHT MODE");
+            $(this).css("display", "none");
+            $("#light").css("display", "block");
+        }
+
+        function lightMode() {
+            $("body").css("background", "white");
+            $(".dark-mode").html("DARK MODE");
+            $(this).css("display", "none");
+            $("#dark").css("display", "block");
         }
 
     })
