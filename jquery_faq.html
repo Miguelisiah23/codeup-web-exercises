@@ -22,6 +22,27 @@
         .highlighted {
             background-color: #FF0;
         }
+        .frame-box {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .picture-frame {
+            border:10px solid black;
+            width: 200px;
+            height: 300px;
+        }
+        .frame1 {
+            background-image: url("img/picasso1.jpeg");
+            background-size: 100% 100%;
+        }
+        .frame2 {
+            background-image: url("img/picasso2.webp");
+            background-size: 100% 100%;
+        }
+        .frame3 {
+            background-image: url("img/picasso3.jpeg");
+            background-size: 100% 100%;
+        }
     </style>
 </head>
 <body>
@@ -48,19 +69,63 @@
     <dt>Vending Machines</dt>
     <dd class="invisible">Japan has one vending machine for every 40 people</dd>
 </dl>
-<button>Invisible button</button>
+
+<button class="main-btn">Invisible button</button>
+
+<h3>Grand Canyon</h3>
+<ul>
+    <li>Grand Canyon National Park is bigger than the entire state of Rhode Island.</li>
+    <li>The Hopi Tribe considers the Grand Canyon a gateway to the afterlife.</li>
+    <li>Temperatures vary greatly within the canyon.</li>
+    <li>In 1909, the canyon was the site of a giant hoax.</li>
+</ul>
+<h3>Grand Teton</h3>
+<ul>
+    <li>Grand Teton National Park covers a total area of 309,994 acres</li>
+    <li>The number of people visiting Grand Teton in 2019 was 3,405,614</li>
+    <li>Grand Teton was made a national park on February 26, 1929.</li>
+    <li>The lowest elevation found in Grand Teton is 6,310 feet at Fish Creek.</li>
+</ul>
+<h3>Arches</h3>
+<ul>
+    <li>There Are Hidden Messages Painted on the Rocks.</li>
+    <li>Balanced Rock Weighs as Much as 27 Blue Whales.</li>
+    <li>Landscape Arch Is the Fifth Longest Arch in the World.</li>
+    <li>The Entire Park Used to Be Under Water.</li>
+</ul>
+<button class="ul-btn">Yellow bg</button>
+<div class="frame-box">
+<div class="picture-frame frame1" id="pic1"></div>
+<div class="picture-frame frame2" id="pic2"></div>
+<div class="picture-frame frame3" id="pic3"></div>
+</div>
+<button class="btn-frame1">swap ></button>
+<button class="btn-frame2">< swap ></button>
+<button class="btn-frame3">< swap</button>
 <script src="js/jquery-3.6.0.js"></script>
 <script>
     "use strict";
 
-    $("button").click(function (){
+    $(".main-btn").click(function (){
         $("dd").toggleClass("invisible");
-        $("dl").toggleClass("center");
     });
     $("dt").click(function (){
         $(this).addClass("highlighted");
     });
-
+    $(".ul-btn").click(function (){
+        $("ul").each(function (){
+            $(this).children().last().css("background-color","yellow")
+        });
+    });
+    $("h3").click(function (){
+        $(this).next().children().css("font-weight","bold");
+    })
+    $("li").click(function (){
+        $(this).parent().children().first().css("color","blue");
+    });
+    // $(".btn-frame1").click(function (){
+    //
+    // })
 </script>
 </body>
 </html>
