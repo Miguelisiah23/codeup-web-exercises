@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+        dt {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: underline;
+            padding-bottom: 10px;
+        }
+        dd {
+            font-size: 1.5em;
+        }
+        .invisible {
+            visibility: hidden;
+        }
+        .highlighted {
+            background-color: #FF0;
+        }
+    </style>
+</head>
+<body>
+<h1 class="center">Facts About...</h1>
+<dl>
+    <dt>The wheel</dt>
+    <dd class="invisible">The world’s oldest wooden wheel has been around for more than 5,000 years</dd>
+    <dt>dust</dt>
+    <dd class="invisible">Dead skin cells are a main ingredient in household dust</dd>
+    <dt>Mammals</dt>
+    <dd class="invisible">The bumblebee bat is the world’s smallest mammal</dd>
+    <dt>Anatomy</dt>
+    <dd class="invisible">The circulatory system is more than 60,000 miles long</dd>
+    <dt>Africa</dt>
+    <dd class="invisible">There are parts of Africa in all four hemispheres</dd>
+    <dt>Cake</dt>
+    <dd class="invisible">German chocolate cake was invented in Texas</dd>
+    <dt>Islands</dt>
+    <dd class="invisible">The Philippines consists of 7,641 islands</dd>
+    <dt>Minerals</dt>
+    <dd class="invisible">There’s enough gold inside Earth to coat the planet</dd>
+    <dt>Water</dt>
+    <dd class="invisible">It takes a drop of water 90 days to travel the entire Mississippi River</dd>
+    <dt>Vending Machines</dt>
+    <dd class="invisible">Japan has one vending machine for every 40 people</dd>
+</dl>
+<button>Invisible button</button>
+<script src="js/jquery-3.6.0.js"></script>
+<script>
+    "use strict";
+
+    $("button").click(function (){
+        $("dd").toggleClass("invisible");
+        $("body").toggleClass("center");
+    });
+    $("dt").click(function (){
+        $(this).addClass("highlighted");
+    });
+
+</script>
+</body>
+</html>
