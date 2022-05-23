@@ -92,6 +92,7 @@
     //     }
     // })
     // Question #3
+    const toggleBtn = $("#toggleH1");
     function toggleFontSize(){
         let h1s = $("h1");
         h1s.each(function (){
@@ -104,13 +105,14 @@
     }
     let intervalId = setInterval(toggleFontSize, 1000);
 
-        setInterval(function (){
-            $("h1").css("font-size","10px");
-            if ($(this).css("font-size","10px")){
-                $(this).css("font-size","20px");
-
-            }
-        }, 1000);
+    toggleBtn.click(function () {
+        if (intervalId === null) {
+            intervalId = setInterval(toggleFontSize, 1000);
+        } else {
+            clearInterval(intervalId);
+            intervalId = null;
+        }
+    });
 
 
 
