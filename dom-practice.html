@@ -92,28 +92,33 @@
     //     }
     // })
     // Question #3
-    const toggleBtn = $("#toggleH1");
-    function toggleFontSize(){
-        let h1s = $("h1");
-        h1s.each(function (){
-            if($(this).css("font-size") !== "10px") {
-                $(this).css("font-size","10px");
-            } else {
-                $(this).css("font-size", "20px");
-            }
-        });
-    }
-    let intervalId = setInterval(toggleFontSize, 1000);
+    // const toggleBtn = $("#toggleH1");
+    // function toggleFontSize(){
+    //     let h1s = $("h1");
+    //     h1s.each(function (){
+    //         if($(this).css("font-size") !== "10px") {
+    //             $(this).css("font-size","10px");
+    //         } else {
+    //             $(this).css("font-size", "20px");
+    //         }
+    //     });
+    // }
+    // let intervalId = setInterval(toggleFontSize, 1000);
+    //
+    // toggleBtn.click(function () {
+    //     if (intervalId === null) {
+    //         intervalId = setInterval(toggleFontSize, 1000);
+    //     } else {
+    //         clearInterval(intervalId);
+    //         intervalId = null;
+    //     }
+    // });
 
-    toggleBtn.click(function () {
-        if (intervalId === null) {
-            intervalId = setInterval(toggleFontSize, 1000);
-        } else {
-            clearInterval(intervalId);
-            intervalId = null;
-        }
+//    Question #4
+    let q4 = $(".question");
+    q4[4].addEventListener("mouseenter",function (){
+        alert("CONGRATULATIONS ON YOUR NEW CRUISE!");
     });
-
 
 
 </script>
