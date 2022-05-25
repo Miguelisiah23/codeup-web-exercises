@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+    <link rel="stylesheet" href="css/ajax-store.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav class="nav">
+<h1 contentEditable role='textbox' aria-multiline='true'>BARKS POWER TOOLS</h1>
+<P>A Mans Best Friend!</P>
+</nav>
+<main class="main">
+    <div class="tableContainer">
+    <h1 class="inventory">Our Inventory</h1>
+    <table id="products">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+        </thead>
+        <tbody id="insertProducts">
+
+        </tbody>
+    </table>
+    <br>
+    <button id="refresh">Refresh our Inventory!</button>
+    </div>
+    <div>
+        <img id="img1" src="img/tool1.webp">
+    </div>
+
+    <div>
+        <img id="img2" src="img/tool2.jpeg">
+    </div>
+    <div class="mission">
+        <h1>OUR MISSION!</h1>
+        <p class="missi6onP">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores aspernatur delectus dolore
+            doloribus excepturi magni nemo nostrum, numquam odit perspiciatis porro praesentium quis quod ratione
+            repellat rerum, sapiente ut?
+        </p>
+    </div>
+</main>
+
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+(function() {
+    "use strict";
+    // TODO: Create an AJAX GET request for the file under data/inventory.json
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+
+    $.get("data/inventory.json").done(function (tools){
+    tools.forEach(function (tool){
+        let title = "<tr>" +
+            "<td>" +
+            tool.title + "</td>" + "<td>" + tool.quantity + "</td>" + "<td>" + tool.price + "</td>" + "<td>" + tool.categories + "</td>" + "</tr>";
+        $("#insertProducts").append(title);
+    });
+    });
+
+    $("#refresh").click(function (){
+        window.location = "http://localhost:63342/codeup-web-exercises/ajax-store.html?_ijt=fu4bki77pgns90t8rphah9d4qu&";
+    })
+})();
+</script>
+
+</body>
+</html>
