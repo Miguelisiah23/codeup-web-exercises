@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet'/>
+</head>
+<body>
+<div id='map' style='width: 95vw; height: 75vh; margin: auto'></div>
+
+<script src="js/geocode-utils.js"></script>
+<script src="js/keys.js"></script>
+<script>
+    mapboxgl.accessToken = MAPBOX_API_KEY;
+    const MAP = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-71.1631, 42.7070], // starting position [lng, lat]
+        zoom: 8 // starting zoom
+    });
+    const MARKER = new mapboxgl.Marker()
+        .setLngLat([-71.115962, 42.372185])
+        .addTo(MAP)
+
+    geocode("1 Bow St, Cambridge, MA 02138", MAPBOX_API_KEY).then(function (data) {
+        console.log(data);
+        const RAMEN = new mapboxgl.Popup()
+            .setLngLat(data)
+            .setHTML("Hokkaido Ramen Santouka")
+        MARKER.setPopup(RAMEN);
+
+    });
+    const FOOD_SPOTS = [
+        {adress: "1 Bow St, Cambridge, MA 02138", name: "Hokkaido Santouka" , bestDish:"Tonkatsu" , culture:"Japanese"},
+        {adress: "351 Market St, Lowell, MA 01852", name: "Pollo Tipico", bestDish: "Chicharrones", culture: "Dominican"},
+        {adress: "190 Lawrence St, Lawrence, MA 01841", name: "Tasty Dumplings", bestDish: "soup Dumplings" , culture: "Chinese"}];
+
+
+
+</script>
+</body>
+</html>
