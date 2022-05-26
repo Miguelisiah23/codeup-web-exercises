@@ -6,37 +6,97 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet'/>
 </head>
-<body>
-<div id='map' style='width: 95vw; height: 75vh; margin: auto'></div>
+<body style="background: black">
+<nav>
+    <label for="search" style="color: white; font-size: 2em">Search a location !</label>
+    <input id="search" placeholder="search..">
+</nav>
+<div id='map' style='width: 95vw; height: 75vh; margin: auto; border: 5px solid red'></div>
+<label for="zoom" style="color: white">Zoom :</label>
+<select id="zoom">
+    <option value="5">5</option>
+    <option value="15">15</option>
+    <option value="20">20</option>
+</select>
 
+<script src="js/jquery-3.6.0.js"></script>
 <script src="js/geocode-utils.js"></script>
 <script src="js/keys.js"></script>
 <script>
+
     mapboxgl.accessToken = MAPBOX_API_KEY;
     const MAP = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
         center: [-71.1631, 42.7070], // starting position [lng, lat]
-        zoom: 8 // starting zoom
-    });
-    const MARKER = new mapboxgl.Marker()
-        .setLngLat([-71.115962, 42.372185])
-        .addTo(MAP)
+        zoom: 9 // starting zoom
 
-    geocode("1 Bow St, Cambridge, MA 02138", MAPBOX_API_KEY).then(function (data) {
-        console.log(data);
-        const RAMEN = new mapboxgl.Popup()
-            .setLngLat(data)
-            .setHTML("Hokkaido Ramen Santouka")
-        MARKER.setPopup(RAMEN);
 
     });
+    $("#zoom").change(function (){
+        MAP.setZoom($(this).val());
+    });
+
+
+
+
+    // const MARKER = new mapboxgl.Marker()
+    //     .setLngLat([-71.115962, 42.372185])
+    //     .addTo(MAP)
+    //
+    // geocode("1 Bow St, Cambridge, MA 02138", MAPBOX_API_KEY).then(function (data) {
+    //     console.log(data);
+    //     const RAMEN = new mapboxgl.Popup()
+    //         .setLngLat(data)
+    //         .setHTML("Hokkaido Ramen Santouka")
+    //     MARKER.setPopup(RAMEN);
+    //
+    // });
     const FOOD_SPOTS = [
-        {adress: "1 Bow St, Cambridge, MA 02138", name: "Hokkaido Santouka" , bestDish:"Tonkatsu" , culture:"Japanese"},
-        {adress: "351 Market St, Lowell, MA 01852", name: "Pollo Tipico", bestDish: "Chicharrones", culture: "Dominican"},
-        {adress: "190 Lawrence St, Lawrence, MA 01841", name: "Tasty Dumplings", bestDish: "soup Dumplings" , culture: "Chinese"}];
+        {
+            address: "1 Bow St, Cambridge, MA 02138",
+            name: "Hokkaido Santouka",
+            bestDish: "Tonkatsu",
+            culture: "Japanese",
+            image: "<img src='img/ramen.webp' height='50px' width='100px'>"
+        },
+        {
+            address: "190 Lawrence St, Lawrence, MA 01841",
+            name: "Pollo Tipico",
+            bestDish: "Chicharrones",
+            culture: "Dominican",
+            image: "<img src='img/mofongo.webp' height='50px' width='100px'>"
+        },
+        {
+            address: "15069 Interstate 35 #217, Selma, TX 78154",
+            name: "Ginza Ramen and Poke",
+            bestDish: "pork combo tonkatsu ramen",
+            culture: "Japanese",
+            image: "<img src='img/ramen.webp' height='50px' width='100px'>"
+        },
+        {
+            address: "351 Market St, Lowell, MA 01852",
+            name: "Tasty Dumplings",
+            bestDish: "soup Dumplings",
+            culture: "Chinese",
+            image: "<img src='img/dumplings.jpeg' height='50px' width='100px'>"
+        }];
+
+    FOOD_SPOTS.forEach(function (FOOD) {
+        console.log(FOOD);
+        geocode(FOOD.address, MAPBOX_API_KEY).then(function (data) {
+            console.log(data);
+            let MARKER = new mapboxgl.Marker()
+                .setLngLat(data)
+                .addTo(MAP);
+            let INFO = new mapboxgl.Popup()
+                .setLngLat(data)
+                .setHTML("This is " + FOOD.name + ". My favorite dish here is " + FOOD.bestDish + ". This is " + FOOD.culture + " food." + "<br>" + FOOD.image)
+            MARKER.setPopup(INFO);
+        });
 
 
+    })
 
 </script>
 </body>
