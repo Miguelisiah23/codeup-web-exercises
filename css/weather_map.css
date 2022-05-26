@@ -1,0 +1,13 @@
+.navbar-brand {
+    color: floralwhite;
+}
+.card {
+    margin: auto;
+    width: 250px;
+    height: 250px;
+}
+#map {
+    border-radius: 10px;
+    border: 3px solid black;
+    margin: auto;
+}
