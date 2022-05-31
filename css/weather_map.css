@@ -11,3 +11,10 @@
     border: 3px solid black;
     margin: auto;
 }
+img {
+    width: 3vw;
+    height: 5vh;
+}
+.card {
+    height: 270px;
+}
