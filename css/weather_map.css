@@ -16,5 +16,11 @@ img {
     height: 5vh;
 }
 .card {
-    height: 270px;
+    height: 250px;
+}
+body {
+    background: black;
+}
+label {
+    color: floralwhite;
 }
