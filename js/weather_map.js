@@ -6,6 +6,7 @@ $(document).ready(function () {
         e.preventDefault();
         let input = $("#search").val();
         geocode(input, MAPBOX_API_KEY).then(function (data) {
+            currentLocation();
             MARKER.setLngLat([data[0], data[1]])
             MAP.setCenter([data[0], data[1]])
             MAP.setZoom(7)
@@ -44,6 +45,9 @@ $(document).ready(function () {
     });
 
 
+
+
+
     // Initial location for weather map
     geocode('Converse, Tx', MAPBOX_API_KEY).then(makeWeatherCards);
 
@@ -79,6 +83,7 @@ $(document).ready(function () {
     MARKER.on('dragend', onDragEnd);
 
     function makeWeatherCards(data) {
+        currentLocation()
         $.get(URL, {
             APPID: WEATHER_MAP_KEY,
             lon: data[0],
@@ -109,6 +114,14 @@ $(document).ready(function () {
                     i++;
                 }
             })
+        })
+    }
+
+    function currentLocation() {
+        let lngLat = MARKER.getLngLat()
+        reverseGeocode(lngLat, MAPBOX_API_KEY).then(function(results) {
+            console.log(results);
+            $("#current-location").html("<h3>" + "Current location: " + results + "</h3>");
         })
     }
 
