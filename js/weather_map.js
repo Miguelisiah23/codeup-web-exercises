@@ -6,11 +6,9 @@ $(document).ready(function () {
         e.preventDefault();
         let input = $("#search").val();
         geocode(input, MAPBOX_API_KEY).then(function (data) {
-            MARKER.setLngLat([data[0],data[1]])
-            MAP.setCenter([data[0],data[1]])
+            MARKER.setLngLat([data[0], data[1]])
+            MAP.setCenter([data[0], data[1]])
             MAP.setZoom(7)
-
-            console.log(data);
             $.get(URL, {
                 APPID: WEATHER_MAP_KEY,
                 lon: data[0],
