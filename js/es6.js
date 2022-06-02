@@ -75,10 +75,10 @@ users.forEach(function(user) {
 
   // TODO: rewrite the assignment below to use template strings
 //   developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
-// });
+  developers.push(`${name}'s email is ${email}. ${name} knows ${languages.join(', ')}.`);
 
-developers.push(`${name}'s email is ${email}. ${name} knows ${languages.join(', ')}.`);
-
+});
+  console.log(developers);
 // TODO: Use `let` for the following variable
 let list = '<ul>';
 
@@ -89,5 +89,5 @@ for (let developer of developers) {
   // list += '<li>' + developer + '</li>';
   list += `<li> ${developer} </li>`
 }
-list += '</ul>'
-});
+list += '</ul>';
+
