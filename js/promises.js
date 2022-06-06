@@ -8,7 +8,8 @@ const lastCommit = (username) => {
         let commitMsg = `Your commit message was '${data[0].payload.commits[0].message}'`;
         document.getElementById("message").append(message);
         document.getElementById("commit").append(commitMsg);
-    });
+    })
+        .catch((error) => console.error(error));
 }
 lastCommit(username);
 
